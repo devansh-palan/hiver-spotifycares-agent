@@ -1,0 +1,687 @@
+{
+ "agent": {
+  "intent": {
+   "n": 200,
+   "accuracy": 0.755,
+   "accuracy_ci95": [
+    0.69,
+    0.81
+   ],
+   "macro_f1": 0.748,
+   "macro_f1_ci95": [
+    0.636,
+    0.808
+   ],
+   "per_class": {
+    "technical_issue": {
+     "precision": 0.8,
+     "recall": 0.75,
+     "f1": 0.774,
+     "support": 32
+    },
+    "service_outage": {
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.857,
+     "support": 4
+    },
+    "account_access": {
+     "precision": 0.955,
+     "recall": 0.7,
+     "f1": 0.808,
+     "support": 30
+    },
+    "billing_subscription": {
+     "precision": 0.698,
+     "recall": 0.968,
+     "f1": 0.811,
+     "support": 31
+    },
+    "content_availability": {
+     "precision": 0.75,
+     "recall": 0.84,
+     "f1": 0.792,
+     "support": 25
+    },
+    "feature_feedback": {
+     "precision": 0.75,
+     "recall": 0.733,
+     "f1": 0.742,
+     "support": 45
+    },
+    "general_question": {
+     "precision": 0.636,
+     "recall": 0.35,
+     "f1": 0.452,
+     "support": 20
+    },
+    "other": {
+     "precision": 0.632,
+     "recall": 0.923,
+     "f1": 0.75,
+     "support": 13
+    }
+   },
+   "confusion": {
+    "billing_subscription": {
+     "billing_subscription": 30,
+     "feature_feedback": 1
+    },
+    "general_question": {
+     "billing_subscription": 4,
+     "general_question": 7,
+     "technical_issue": 1,
+     "feature_feedback": 5,
+     "content_availability": 2,
+     "other": 1
+    },
+    "feature_feedback": {
+     "feature_feedback": 33,
+     "general_question": 3,
+     "billing_subscription": 3,
+     "content_availability": 2,
+     "other": 2,
+     "technical_issue": 2
+    },
+    "technical_issue": {
+     "technical_issue": 24,
+     "content_availability": 3,
+     "feature_feedback": 3,
+     "billing_subscription": 1,
+     "account_access": 1
+    },
+    "account_access": {
+     "other": 2,
+     "technical_issue": 2,
+     "account_access": 21,
+     "billing_subscription": 4,
+     "general_question": 1
+    },
+    "other": {
+     "other": 12,
+     "feature_feedback": 1
+    },
+    "content_availability": {
+     "content_availability": 21,
+     "other": 2,
+     "billing_subscription": 1,
+     "feature_feedback": 1
+    },
+    "service_outage": {
+     "technical_issue": 1,
+     "service_outage": 3
+    }
+   }
+  },
+  "escalation": {
+   "n": 200,
+   "accuracy": 0.945,
+   "precision": 0.954,
+   "recall": 0.886,
+   "recall_ci95": [
+    0.8,
+    0.954
+   ],
+   "f1": 0.919,
+   "automation_rate": 0.675,
+   "unsafe_auto_rate": 0.04,
+   "over_escalation_rate": 0.015,
+   "tp": 62,
+   "fp": 3,
+   "fn": 8,
+   "tn": 127,
+   "reason_match_rate_on_tp": 0.952,
+   "reason_confusion": {
+    "billing_or_refund->account_access_needed": 2,
+    "account_access_needed->security_fraud": 1
+   }
+  },
+  "reply_proxies": {
+   "n": 200,
+   "mean_chars": 133.7,
+   "pct_over_280": 0.0,
+   "greeting_rate": 1.0,
+   "invented_url_rate": 0.0,
+   "asks_password_or_card": 0.005,
+   "asks_pii_publicly": 0.0,
+   "signs_initials": 0.0,
+   "mentions_ai": 0.0,
+   "empty": 0,
+   "escalated_replies_mention_dm": 0.969
+  },
+  "uniform_subset": {
+   "n": 100,
+   "intent_accuracy": 0.74,
+   "escalation": {
+    "accuracy": 0.93,
+    "precision": 0.943,
+    "recall": 0.868,
+    "automation_rate": 0.65,
+    "unsafe_auto_rate": 0.05
+   }
+  },
+  "judge": {
+   "n": 200,
+   "acceptable_rate": 0.745,
+   "safe_rate": 1.0,
+   "mean_overall": 4.08,
+   "mean_grounded": 4.16,
+   "mean_helpful": 3.83,
+   "mean_tone": 4.88,
+   "parse_errors": 0
+  },
+  "end_to_end_trust_rate": 0.58,
+  "judge_acceptable_by_intent": {
+   "account_access": 0.93,
+   "billing_subscription": 0.94,
+   "content_availability": 0.64,
+   "feature_feedback": 0.6,
+   "general_question": 0.5,
+   "other": 0.62,
+   "service_outage": 1.0,
+   "technical_issue": 0.84
+  },
+  "confidence_calibration": {
+   "0.7-0.85": {
+    "n": 2,
+    "accuracy": 0.5
+   },
+   ">=0.85": {
+    "n": 198,
+    "accuracy": 0.758
+   }
+  },
+  "escalation_source_counts": {
+   "intent_policy": 31,
+   "auto": 135,
+   "llm_risk": 5,
+   "language": 4,
+   "regex": 25
+  }
+ },
+ "simple": {
+  "intent": {
+   "n": 200,
+   "accuracy": 0.66,
+   "accuracy_ci95": [
+    0.59,
+    0.725
+   ],
+   "macro_f1": 0.665,
+   "macro_f1_ci95": [
+    0.601,
+    0.717
+   ],
+   "per_class": {
+    "technical_issue": {
+     "precision": 0.579,
+     "recall": 0.688,
+     "f1": 0.629,
+     "support": 32
+    },
+    "service_outage": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 4
+    },
+    "account_access": {
+     "precision": 0.962,
+     "recall": 0.833,
+     "f1": 0.893,
+     "support": 30
+    },
+    "billing_subscription": {
+     "precision": 0.676,
+     "recall": 0.806,
+     "f1": 0.735,
+     "support": 31
+    },
+    "content_availability": {
+     "precision": 0.576,
+     "recall": 0.76,
+     "f1": 0.655,
+     "support": 25
+    },
+    "feature_feedback": {
+     "precision": 0.628,
+     "recall": 0.6,
+     "f1": 0.614,
+     "support": 45
+    },
+    "general_question": {
+     "precision": 0.444,
+     "recall": 0.2,
+     "f1": 0.276,
+     "support": 20
+    },
+    "other": {
+     "precision": 0.6,
+     "recall": 0.462,
+     "f1": 0.522,
+     "support": 13
+    }
+   },
+   "confusion": {
+    "billing_subscription": {
+     "billing_subscription": 25,
+     "account_access": 1,
+     "content_availability": 2,
+     "technical_issue": 2,
+     "other": 1
+    },
+    "general_question": {
+     "billing_subscription": 3,
+     "technical_issue": 3,
+     "general_question": 4,
+     "feature_feedback": 5,
+     "content_availability": 5
+    },
+    "feature_feedback": {
+     "feature_feedback": 27,
+     "general_question": 3,
+     "billing_subscription": 3,
+     "other": 3,
+     "technical_issue": 6,
+     "content_availability": 3
+    },
+    "technical_issue": {
+     "technical_issue": 22,
+     "feature_feedback": 6,
+     "billing_subscription": 2,
+     "content_availability": 2
+    },
+    "account_access": {
+     "billing_subscription": 4,
+     "technical_issue": 1,
+     "account_access": 25
+    },
+    "other": {
+     "other": 6,
+     "technical_issue": 3,
+     "feature_feedback": 1,
+     "content_availability": 2,
+     "general_question": 1
+    },
+    "content_availability": {
+     "feature_feedback": 4,
+     "content_availability": 19,
+     "general_question": 1,
+     "technical_issue": 1
+    },
+    "service_outage": {
+     "service_outage": 4
+    }
+   }
+  },
+  "escalation": {
+   "n": 200,
+   "accuracy": 0.88,
+   "precision": 0.829,
+   "recall": 0.829,
+   "recall_ci95": [
+    0.716,
+    0.912
+   ],
+   "f1": 0.829,
+   "automation_rate": 0.65,
+   "unsafe_auto_rate": 0.06,
+   "over_escalation_rate": 0.06,
+   "tp": 58,
+   "fp": 12,
+   "fn": 12,
+   "tn": 118,
+   "reason_match_rate_on_tp": 0.776,
+   "reason_confusion": {
+    "billing_or_refund->account_access_needed": 9,
+    "repeat_contact_or_frustration->account_access_needed": 2,
+    "security_fraud->account_access_needed": 2
+   }
+  },
+  "reply_proxies": {
+   "n": 200,
+   "mean_chars": 106.9,
+   "pct_over_280": 0.0,
+   "greeting_rate": 0.9,
+   "invented_url_rate": 0.0,
+   "asks_password_or_card": 0.0,
+   "asks_pii_publicly": 0.0,
+   "signs_initials": 0.0,
+   "mentions_ai": 0.0,
+   "empty": 0,
+   "escalated_replies_mention_dm": 0.814
+  },
+  "uniform_subset": {
+   "n": 100,
+   "intent_accuracy": 0.59,
+   "escalation": {
+    "accuracy": 0.85,
+    "precision": 0.848,
+    "recall": 0.737,
+    "automation_rate": 0.67,
+    "unsafe_auto_rate": 0.1
+   }
+  },
+  "judge": {
+   "n": 200,
+   "acceptable_rate": 0.6,
+   "safe_rate": 0.995,
+   "mean_overall": 3.97,
+   "mean_grounded": 4.0,
+   "mean_helpful": 3.67,
+   "mean_tone": 4.79,
+   "parse_errors": 0
+  },
+  "end_to_end_trust_rate": 0.41,
+  "judge_acceptable_by_intent": {
+   "account_access": 0.8,
+   "billing_subscription": 0.81,
+   "content_availability": 0.44,
+   "feature_feedback": 0.51,
+   "general_question": 0.3,
+   "other": 0.54,
+   "service_outage": 0.75,
+   "technical_issue": 0.66
+  }
+ },
+ "trivial_always": {
+  "intent": {
+   "n": 200,
+   "accuracy": 0.16,
+   "accuracy_ci95": [
+    0.115,
+    0.215
+   ],
+   "macro_f1": 0.034,
+   "macro_f1_ci95": [
+    0.026,
+    0.045
+   ],
+   "per_class": {
+    "technical_issue": {
+     "precision": 0.16,
+     "recall": 1.0,
+     "f1": 0.276,
+     "support": 32
+    },
+    "service_outage": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 4
+    },
+    "account_access": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 30
+    },
+    "billing_subscription": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 31
+    },
+    "content_availability": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 25
+    },
+    "feature_feedback": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 45
+    },
+    "general_question": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 20
+    },
+    "other": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 13
+    }
+   },
+   "confusion": {
+    "billing_subscription": {
+     "technical_issue": 31
+    },
+    "general_question": {
+     "technical_issue": 20
+    },
+    "feature_feedback": {
+     "technical_issue": 45
+    },
+    "technical_issue": {
+     "technical_issue": 32
+    },
+    "account_access": {
+     "technical_issue": 30
+    },
+    "other": {
+     "technical_issue": 13
+    },
+    "content_availability": {
+     "technical_issue": 25
+    },
+    "service_outage": {
+     "technical_issue": 4
+    }
+   }
+  },
+  "escalation": {
+   "n": 200,
+   "accuracy": 0.35,
+   "precision": 0.35,
+   "recall": 1.0,
+   "recall_ci95": [
+    1.0,
+    1.0
+   ],
+   "f1": 0.519,
+   "automation_rate": 0.0,
+   "unsafe_auto_rate": 0.0,
+   "over_escalation_rate": 0.65,
+   "tp": 70,
+   "fp": 130,
+   "fn": 0,
+   "tn": 0,
+   "reason_match_rate_on_tp": 0.5,
+   "reason_confusion": {
+    "billing_or_refund->account_access_needed": 11,
+    "security_fraud->account_access_needed": 9,
+    "repeat_contact_or_frustration->account_access_needed": 6,
+    "churn_or_anger_risk->account_access_needed": 4,
+    "non_english->account_access_needed": 3,
+    "sensitive_situation->account_access_needed": 1,
+    "legal_or_pr_risk->account_access_needed": 1
+   }
+  },
+  "reply_proxies": {
+   "n": 200,
+   "mean_chars": 115.0,
+   "pct_over_280": 0.0,
+   "greeting_rate": 1.0,
+   "invented_url_rate": 0.0,
+   "asks_password_or_card": 0.0,
+   "asks_pii_publicly": 0.0,
+   "signs_initials": 0.0,
+   "mentions_ai": 0.0,
+   "empty": 0,
+   "escalated_replies_mention_dm": 1.0
+  },
+  "uniform_subset": {
+   "n": 100,
+   "intent_accuracy": 0.17,
+   "escalation": {
+    "accuracy": 0.38,
+    "precision": 0.38,
+    "recall": 1.0,
+    "automation_rate": 0.0,
+    "unsafe_auto_rate": 0.0
+   }
+  },
+  "judge": {
+   "n": 200,
+   "acceptable_rate": 0.495,
+   "safe_rate": 0.995,
+   "mean_overall": 3.61,
+   "mean_grounded": 3.26,
+   "mean_helpful": 3.29,
+   "mean_tone": 4.58,
+   "parse_errors": 0
+  },
+  "end_to_end_trust_rate": 0.01,
+  "judge_acceptable_by_intent": {
+   "account_access": 1.0,
+   "billing_subscription": 1.0,
+   "content_availability": 0.12,
+   "feature_feedback": 0.24,
+   "general_question": 0.1,
+   "other": 0.54,
+   "service_outage": 0.25,
+   "technical_issue": 0.44
+  }
+ },
+ "trivial_never": {
+  "intent": {
+   "n": 200,
+   "accuracy": 0.16,
+   "accuracy_ci95": [
+    0.115,
+    0.215
+   ],
+   "macro_f1": 0.034,
+   "macro_f1_ci95": [
+    0.026,
+    0.045
+   ],
+   "per_class": {
+    "technical_issue": {
+     "precision": 0.16,
+     "recall": 1.0,
+     "f1": 0.276,
+     "support": 32
+    },
+    "service_outage": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 4
+    },
+    "account_access": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 30
+    },
+    "billing_subscription": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 31
+    },
+    "content_availability": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 25
+    },
+    "feature_feedback": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 45
+    },
+    "general_question": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 20
+    },
+    "other": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 13
+    }
+   },
+   "confusion": {
+    "billing_subscription": {
+     "technical_issue": 31
+    },
+    "general_question": {
+     "technical_issue": 20
+    },
+    "feature_feedback": {
+     "technical_issue": 45
+    },
+    "technical_issue": {
+     "technical_issue": 32
+    },
+    "account_access": {
+     "technical_issue": 30
+    },
+    "other": {
+     "technical_issue": 13
+    },
+    "content_availability": {
+     "technical_issue": 25
+    },
+    "service_outage": {
+     "technical_issue": 4
+    }
+   }
+  },
+  "escalation": {
+   "n": 200,
+   "accuracy": 0.65,
+   "precision": 0.0,
+   "recall": 0.0,
+   "recall_ci95": [
+    0.0,
+    0.0
+   ],
+   "f1": 0.0,
+   "automation_rate": 1.0,
+   "unsafe_auto_rate": 0.35,
+   "over_escalation_rate": 0.0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 70,
+   "tn": 130,
+   "reason_match_rate_on_tp": null,
+   "reason_confusion": {}
+  },
+  "reply_proxies": {
+   "n": 200,
+   "mean_chars": 115.0,
+   "pct_over_280": 0.0,
+   "greeting_rate": 1.0,
+   "invented_url_rate": 0.0,
+   "asks_password_or_card": 0.0,
+   "asks_pii_publicly": 0.0,
+   "signs_initials": 0.0,
+   "mentions_ai": 0.0,
+   "empty": 0,
+   "escalated_replies_mention_dm": null
+  },
+  "uniform_subset": {
+   "n": 100,
+   "intent_accuracy": 0.17,
+   "escalation": {
+    "accuracy": 0.62,
+    "precision": 0.0,
+    "recall": 0.0,
+    "automation_rate": 1.0,
+    "unsafe_auto_rate": 0.38
+   }
+  },
+  "judge": null
+ }
+}

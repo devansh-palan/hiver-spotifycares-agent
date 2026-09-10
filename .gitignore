@@ -1,0 +1,11 @@
+data/raw/
+data/processed/*.parquet
+data/processed/*.npy
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.egg-info/
+.cache/
+outputs/figs/*.png
+outputs/log_*.txt

@@ -1,0 +1,54 @@
+# Intent taxonomy for SpotifyCares first-contact messages.
+# Defined from reading ~300 random customer openers (see data/golden/LABELING_GUIDE.md).
+brand: SpotifyCares
+intents:
+  technical_issue:
+    description: >
+      Something in the product malfunctions for this user: app crashes, songs won't play or skip,
+      sound problems, gets logged out, downloads disappear, error codes, features not working,
+      or connection problems with a device (Google Home, Sonos, car, PS4, Apple Watch, Bluetooth).
+    default_action: auto
+    typical_resolution: Ask for device / OS / app version, suggest log-out -> restart -> log-in or reinstall, link to the relevant help article.
+  service_outage:
+    description: >
+      User suspects a platform-wide outage right now ("is Spotify down?", "not just me", "what's going on with the app"),
+      typically sudden and with no personal detail.
+    default_action: auto
+    typical_resolution: Acknowledge the hiccup, confirm status, ask them to retry.
+  account_access:
+    description: >
+      Cannot get into the account or the account is compromised: login failures, password reset, email changed
+      without consent, hacked, locked out, wrong Facebook link, unknown email, wants account blocked.
+    default_action: escalate
+    typical_resolution: Ask the user to DM username/email so a human can verify identity and act on the account.
+  billing_subscription:
+    description: >
+      Money or plan problems: unexpected or double charges, charged after cancelling, refund requests, Premium not
+      active after paying, student / family / trial / intro-offer eligibility or failures, discount questions,
+      changing country or payment method.
+    default_action: escalate
+    typical_resolution: DM for account details so billing can be checked; pure pricing / offer-terms questions can be answered publicly.
+  content_availability:
+    description: >
+      Requests about the music catalogue: add or bring back a song/album/artist, why a track was removed,
+      region-locked content, release timing, explicit versions, wrong metadata, podcast availability.
+    default_action: auto
+    typical_resolution: Explain that availability depends on licensing / rights holders, link to the content help page, ask for country if relevant.
+  feature_feedback:
+    description: >
+      Opinions and suggestions about how the product is designed rather than a malfunction: new feature ideas,
+      UI complaints, shuffle / recommendation quality, ads complaints, praise or criticism of playlists.
+    default_action: auto
+    typical_resolution: Thank them, say the feedback is passed to the team, optionally link the community ideas board.
+  general_question:
+    description: >
+      Informational questions answerable without touching the account: how a feature works, limits (e.g. 3,333 downloads),
+      when Spotify launches in a country, artist / creator tooling, what a promo is, where to find stats.
+    default_action: auto
+    typical_resolution: Answer directly or link to the relevant help / community page.
+  other:
+    description: >
+      Not a support request or not workable as one: non-English messages, thanks / praise only, jokes and chit-chat,
+      follow-ups about an existing DM, spam, or messages too vague to classify ("what have you done").
+    default_action: auto
+    typical_resolution: Ask what is happening exactly, or reply warmly; route non-English to language-specific email support.
